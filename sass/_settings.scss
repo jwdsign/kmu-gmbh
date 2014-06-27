@@ -1,0 +1,17 @@
+html, body{
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body{
+	background-color: $body-background;
+}
+
+//wp-admin-bar
+.admin-bar{
+
+	._global-header{
+		top:46px;
+		@include breakpoint(783px) { top:32px; }
+	}
+}

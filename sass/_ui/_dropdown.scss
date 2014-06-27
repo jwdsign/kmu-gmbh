@@ -1,0 +1,40 @@
+.dropdown{
+
+	@extend %z-layer-ui;
+
+	ul{
+		
+		@extend %reset;
+		display: block;
+
+	
+	li{
+		text-align: center;
+		line-height: 2;
+		padding: 0 0.25em;
+
+		@include breakpoint($breakpoint-medium) {
+			display: inline-block;
+		}
+	}
+
+	.has-children{
+		position: relative;
+		
+		&:hover{
+			ul{ height: auto; visibility: visible; }
+		}
+
+		ul{
+			position: absolute;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+			@include transition(all, 175ms, ease-in-out);
+
+		}
+	}
+
+	}
+
+}

@@ -1,0 +1,124 @@
+nav{
+	ul{ 
+		@extend %reset;
+		@extend %clear; 
+	}
+
+}
+
+._nav-toggle{
+	text-align: center;
+	height: $navbar-height;
+	line-height: $navbar-height;
+	
+	cursor: pointer;
+
+	display: block;
+	
+	@include breakpoint($breakpoint-medium) {
+		display: none;
+	} 
+
+
+}
+
+
+._global-header-nav,
+._global-footer-nav{
+
+	@extend %center;
+
+	color: $white;
+	font-weight: 300;
+	font-size: 75%;
+	letter-spacing: 0.025em;
+
+	
+	max-width: $grid-max-width;
+	li{display: inline-block;}
+}
+
+._global-header-nav{
+
+	[title="call-to-action"]{
+		display: none;
+		border: 1px solid $white;
+		height: 32px;
+		line-height: 32px;
+		margin-top: 8px;
+		float: right;
+		@include transition(all, 175ms, ease-in-out);
+
+		&:hover{
+			background-color: $white;
+			color:  $indigo-700;
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			display: block;
+		}
+	}
+
+	ul{
+		@extend %clear;
+		display: none;
+		
+		@include breakpoint($breakpoint-medium) {
+			display: block;
+		}
+
+		li{
+			@extend %transition;
+			display: block;
+			position: relative;
+			height: $navbar-height;
+			line-height: $navbar-height;
+			text-align: center;
+			
+			@include breakpoint($breakpoint-medium) {
+				float: left;
+			}
+
+			.submenu{ 
+				display: none;
+				background-color: $indigo-500;
+
+				li{ 
+					text-align: left;
+					font-size: 90%;
+					display: block;
+					width: 100%;
+
+					&:hover{ background-color: $indigo-400; }
+				} 
+			}
+
+			&:hover{
+				background-color: $indigo-500; 
+				
+				.submenu{ 
+					display: none;
+					@extend %box-shadow; 
+					@include breakpoint($breakpoint-medium) {
+						display: block;
+						position: absolute;
+						width: 200%;
+					}
+				}
+			}
+
+		}
+		
+	}
+	a{ display: block; padding: 0 1em; }
+}
+
+.nav-active{
+	ul{ display: block; background-color: $indigo-900; }
+}
+
+._global-footer-nav{
+	ul{}
+	li{padding: 0 1em 0 0;}
+	a{}
+}

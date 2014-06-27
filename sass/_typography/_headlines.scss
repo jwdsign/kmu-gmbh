@@ -1,0 +1,32 @@
+body{
+	font-family: $secondary-font;
+}
+
+h1, h2, h3, h4, ,h5, h6{
+	font-family:$primary-font;
+	font-weight: 200;
+	letter-spacing: -0.025em;
+
+}
+
+h1{
+	font-size: 1.75em;
+	@include breakpoint($breakpoint-small-medium) { font-size: 2.25em; }
+	@include breakpoint($breakpoint-wide) { font-size: 2.875em; }
+	
+	strong{ 
+		display: block; 
+		@include breakpoint($breakpoint-medium) { display: inline; }
+	}
+}
+
+h2{
+	font-size: 1.25em;
+	@include breakpoint($breakpoint-small-medium) { font-size: 1.75em; }
+	@include breakpoint($breakpoint-wide) { font-size: 2em; }
+	
+	strong{ 
+		display: block; 
+		@include breakpoint($breakpoint-medium) { display: inline; }
+	}
+}

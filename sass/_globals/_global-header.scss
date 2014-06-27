@@ -1,0 +1,48 @@
+$navbar-height:48px;
+
+._global-header{
+	@extend %clear;
+	background-color: $primary-color;
+	
+	@include breakpoint($breakpoint-medium) {
+		margin-top: $navbar-height;
+		min-height: 24em;
+	}
+}
+
+._global-header-logo{
+	@extend %center;
+	width: 100%;
+	max-width: $grid-max-width;
+	
+	@include breakpoint($breakpoint-medium) {
+	padding: 2.75em 0;
+	}
+
+	img{ 
+		margin: 1.5em auto;
+		display: block; 
+		max-width: 100%;
+		@include breakpoint($breakpoint-medium) {
+			margin: 0;
+		} 
+	}
+}
+
+._global-header-navbar{
+	@extend %z-layer-ui;
+	@extend %box-shadow;
+	@extend %clear;
+	position: relative;
+	background-color: $indigo-700;
+	height: auto;
+	width: 100%;
+
+	@include breakpoint($breakpoint-medium) {
+		height: $navbar-height;
+		position: fixed;
+		top: 0; left: 0;
+	} 
+	
+
+}
